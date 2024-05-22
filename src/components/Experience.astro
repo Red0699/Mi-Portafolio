@@ -1,0 +1,22 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  {
+    date: "Mayo 2023",
+    title: "Proyecto de Grado de Ingeniería de Sistemas",
+    company: "Bogotá, Colombia",
+    description:
+      "Desarrollé una plataforma web para el apoyo a la gestión y control de inventario de parques administrados por el IDRD (Instituto Distrital de Recreación y Deporte), mediante la implementación de metodologías ágiles de desarrollo y herramientas de software libre.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
