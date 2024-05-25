@@ -12,6 +12,9 @@ import NodeJS from "./icons/NodeJS.astro";
 import Mongo from "./icons/Mongo.astro";
 import DiscordJS from "./icons/DiscordJS.astro";
 import Java from "./icons/Java.astro";
+import Html from "./icons/Html.astro";
+import Css from "./icons/Css.astro";
+import Javascript from "./icons/Javascript.astro";
 
 const TAGS = {
   NEXT: {
@@ -64,6 +67,21 @@ const TAGS = {
     class: "bg-[#000107] text-white",
     icon: Java,
   },
+  HTML: {
+    name: "HTML",
+    class: "bg-[#E34F26] text-white",
+    icon: Html
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#30A9DC] text-white",
+    icon: Css
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-[#F0DB4F] text-white",
+    icon: Javascript
+  }
 };
 
 const PROJECTS = [
@@ -88,7 +106,7 @@ const PROJECTS = [
   {
     title: "Sword Bot",
     description:
-      "Bot desarrollado con NodeJS utilizando la API de Discord para la interacción dinámica de un canal de Discord de videojuegos",
+      "Bot desarrollado con NodeJS utilizando la API de Discord para la interacción dinámica de un canal de Discord de videojuegos.",
     link: "",
     github: "https://github.com/Red0699/Sword-Bot.git",
     image: "/img/Sword-Bot.webp",
@@ -104,6 +122,15 @@ const PROJECTS = [
     tags: [TAGS.ANGULAR],
   },
   {
+    title: "Blog de la Cundi",
+    description:
+      "El objetivo de este proyecto es crear una plataforma en línea donde la comunidad académica de la universidad pueda compartir y acceder a información relevante, noticias, artículos y recursos relacionados con la educación superior y la vida universitaria.",
+    link: "https://red0699.github.io/Blog-UDEC/dist/",
+    github: "https://github.com/Red0699/Blog-UDEC.git",
+    image: "/img/blogCundi.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.BOOTSTRAP]
+  },
+  {
     title: "Aplicación de escritorio para el control de gasto eléctrico del hogar",
     description:
       "Proyecto desarrollado con Java y MySQL con la finalidad de controlar el gasto eléctrico de los electrodomésticos en el hogar mediante índices y estadísticas de consumo, de acuerdo a los objetivos de desarrollo sostenible.",
@@ -111,7 +138,7 @@ const PROJECTS = [
     github: "https://github.com/Red0699/PI2020.git",
     image: "/img/logoProjectJava.webp",
     tags: [TAGS.JAVA, TAGS.MYSQL],
-  },
+  }
 ];
 ---
 
