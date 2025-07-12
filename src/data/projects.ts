@@ -4,11 +4,28 @@ export const PROJECTS = [
   {
     title: "Gestión y control de inventario de parques",
     description:
-      "Plataforma web para el apoyo a la gestión y control de inventario de parques administrados por el IDRD",
+      "Plataforma web para el apoyo a la gestión y control de inventario de parques administrados por el IDRD.",
     link: "",
     github: "https://github.com/Red0699/PROYECTO-IDRD-PARQUES.git",
     image: "/img/idrd.webp",
-    tags: [TAGS.LARAVEL, TAGS.MYSQL, TAGS.BOOTSTRAP],
+    tags: [TAGS.LARAVEL, TAGS.MYSQL, TAGS.BOOTSTRAP, TAGS.PHP],
+  },
+  {
+    title: "Talento ECundi",
+    description: "Aplicación web Full Stack para los egresados de la universidad de cundinamarca donde ellos pueden crear su perfil profesional, registrar su formación académica y realizar tests de habilidades, mientras que las empresas pueden publicar ofertas laborales y recibir postulaciones de los egresados.",
+    link: "",
+    github: "https://github.com/Red0699/Proyecto-TalentoECundi",
+    image: "/img/udec-proyecto.webp",
+    tags:[TAGS.ANGULAR, TAGS.NODEJS, TAGS.MYSQL, TAGS.BOOTSTRAP, TAGS.TYPESCRIPT, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Sword Bot",
+    description:
+      "Bot desarrollado con NodeJS utilizando la liberia de whatsapp-web.js para la interacción dinámica de un grupo de videojuegos.",
+    link: "",
+    github: "https://github.com/Red0699/Bot-WhatsApp",
+    image: "/img/Sword-Bot.webp",
+    tags: [TAGS.NODEJS, TAGS.MONGODB, TAGS.JAVASCRIPT],
   },
   {
     title: "Control de Citas de Inmobiliarias",
@@ -17,16 +34,7 @@ export const PROJECTS = [
     link: "",
     github: "https://github.com/Red0699/Proyecto-Software-Mejorado",
     image: "/img/projectInmobiliaria.webp",
-    tags: [TAGS.BOOTSTRAP, TAGS.ANGULAR, TAGS.MYSQL, TAGS.NODEJS],
-  },
-  {
-    title: "Sword Bot",
-    description:
-      "Bot desarrollado con NodeJS utilizando la API de Discord para la interacción dinámica de un canal de Discord de videojuegos.",
-    link: "",
-    github: "https://github.com/Red0699/Sword-Bot.git",
-    image: "/img/Sword-Bot.webp",
-    tags: [TAGS.NODEJS, TAGS.MONGODB, TAGS.DISCORDJS],
+    tags: [TAGS.BOOTSTRAP, TAGS.ANGULAR, TAGS.MYSQL, TAGS.NODEJS, TAGS.TYPESCRIPT, TAGS.JAVASCRIPT],
   },
   {
     title: "Aplicativo web para gestionar acciones de Vehículos",
@@ -35,7 +43,7 @@ export const PROJECTS = [
     link: "",
     github: "https://github.com/Red0699/LineaI.git",
     image: "/img/udec-proyecto.webp",
-    tags: [TAGS.ANGULAR],
+    tags: [TAGS.ANGULAR, TAGS.TYPESCRIPT],
   },
   {
     title: "Blog de la Cundi",

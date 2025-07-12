@@ -11,6 +11,8 @@ import Java from "@/components/icons/Java.astro";
 import Html from "@/components/icons/Html.astro";
 import Css from "@/components/icons/Css.astro";
 import Javascript from "@/components/icons/Javascript.astro";
+import Php from "@/components/icons/Php.astro";
+import Typescript from "@/components/icons/Typescript.astro";
 
 export const TAGS = {
   NEXT: {
@@ -77,5 +79,15 @@ export const TAGS = {
     name: "JavaScript",
     class: "bg-[#F0DB4F] text-white",
     icon: Javascript,
+  },
+  PHP: {
+    name: "PHP",
+    class: "bg-[#777BB3] text-white",
+    icon: Php,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-[#3178C6] text-white",
+    icon: Typescript,
   },
 };

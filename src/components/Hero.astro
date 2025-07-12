@@ -1,9 +1,9 @@
 ---
-const personalImageAlt = "Nicolas Campos"
-import Badge from "@/components/Badge.astro"
-import LinkedInIcon from "@/components/icons/LinkedIn.astro"
-import MailIcon from "@/components/icons/Mail.astro"
-import SocialPill from "@/components/SocialPill.astro"
+const personalImageAlt = "Nicolas Campos";
+import Badge from "@/components/Badge.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import SocialPill from "@/components/SocialPill.astro";
 ---
 
 <div class="flex flex-col md:flex-row items-center max-w-2xl mx-auto">
@@ -23,11 +23,16 @@ import SocialPill from "@/components/SocialPill.astro"
     </a>
   </div>
   <div>
-    <h1 class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white">
+    <h1
+      class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+    >
       Hola, soy Nicolas Campos
     </h1>
-    <p class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300">
-      <strong>Ingeniero de Sistemas</strong> de Bogotá, Colombia 🇨🇴. Especializado en el desarrollo de software.
+    <p
+      class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+    >
+      <strong>Ingeniero de Sistemas</strong> de Bogotá, Colombia 🇨🇴. Especializado
+      en el desarrollo de software.
     </p>
     <nav class="flex flex-wrap gap-4 mt-8">
       <SocialPill href="mailto:yimmernicolas@gmail.com">
@@ -38,6 +43,7 @@ import SocialPill from "@/components/SocialPill.astro"
         <LinkedInIcon class="size-4" />
         LinkedIn
       </SocialPill>
+      <SocialPill href="/cv"> 📄 Ver CV </SocialPill>
     </nav>
   </div>
 </div>

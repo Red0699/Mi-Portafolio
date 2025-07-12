@@ -1,14 +1,13 @@
 ---
-import { EXPERIENCIE } from "@/data/experiencia";
 import { PROJECTS } from "@/data/projects";
 import { CERTIFICACIONES } from "@/data/certificaciones";
-import { SKILLS } from "@/data/skills"; // si decides tenerlas separadas
+import { HABILIDADES } from "@/data/habilidades";
 ---
 
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Currículum de Nicolás Campos</title>
+    <title>CV de Nicolás Campos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       @media print {
@@ -19,77 +18,141 @@ import { SKILLS } from "@/data/skills"; // si decides tenerlas separadas
           zoom: 0.95;
         }
       }
+      @media print {
+        .print-page-break {
+          page-break-before: always;
+        }
+      }
     </style>
   </head>
-  <body class="bg-white text-gray-900 font-sans px-6 py-12 max-w-3xl mx-auto print:px-0 print:py-4">
-
-    <header class="border-b pb-4 mb-6">
-      <h1 class="text-3xl font-bold">Nicolás Campos</h1>
-      <p class="text-lg text-gray-600">Ingeniero de Sistemas | Desarrollador Web Full Stack</p>
-      <p class="text-sm text-gray-500 mt-2">📍 Bogotá, Colombia · 📧 red0699@gmail.com · 💻 github.com/Red0699</p>
+  <body
+    class="bg-white text-gray-900 font-sans px-6 py-12 max-w-3xl mx-auto print:px-0 print:py-4"
+  >
+    <header class="border-b pb-4 mb-5">
+      <h1 class="text-3xl font-bold">Yimmer Nicolás Campos Rojas</h1>
+      <p class="text-lg text-gray-600">
+        Ingeniero de Sistemas | Analista de datos y Desarrollador
+      </p>
+      <p class="text-sm text-gray-500 mt-2">
+        📍 Bogotá, Colombia · 📧 yimmernicolas@gmail.com · 📞 +57 3214663210 ·
+        🌐
+        <a
+          href="https://nicolascampos-web.vercel.app/"
+          class="text-blue-600 hover:underline"
+          target="_blank"
+          rel="noopener"
+        >
+          nicolascampos-web.vercel.app
+        </a>
+      </p>
     </header>
 
     <section class="mb-6">
       <h2 class="text-xl font-semibold border-b pb-1 mb-2">Perfil</h2>
       <p class="text-sm leading-relaxed text-gray-700">
-        Ingeniero de Sistemas con experiencia en desarrollo web Full Stack usando tecnologías como Laravel, Node.js, Angular, MySQL y más. Apasionado por crear soluciones eficientes, con enfoque en usabilidad, rendimiento y buenas prácticas.
+        Ingeniero de Sistemas con experiencia en desarrollo web Full Stack
+        usando tecnologías como Laravel, Node.js, Angular, MySQL y más.
+        Apasionado por crear soluciones eficientes, con enfoque en usabilidad,
+        rendimiento y buenas prácticas.
       </p>
-    </section>
+      <p class="text-sm leading-relaxed text-gray-700 mt-2">
+        Cuento con iniciativa de aprendizaje, proactividad, excelente
+        puntualidad, buenas relaciones interpersonales y trabajo en equipo, alto
+        grado de responsabilidad y compromiso en las labores a desarrollar.
+      </p>
 
-    <section class="mb-6">
-      <h2 class="text-xl font-semibold border-b pb-1 mb-2">Experiencia Laboral</h2>
-      <ul class="space-y-4 text-sm">
-        {EXPERIENCIE.map(({ title, company, date, description }) => (
+      <section class="mb-8 mt-6">
+        <h2 class="text-xl font-semibold border-b pb-1 mb-2">Educación</h2>
+        <div>
+          <h3 class="text-lg font-medium text-gray-800 dark:text-white">
+            Ingeniería de Sistemas
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300">
+            Universidad de Cundinamarca — Febrero 2018 - Marzo 2024
+          </p>
+          <p class="text-sm text-gray-500 mt-1">
+            Formación orientada al desarrollo de software, análisis de datos y
+            metodologías ágiles.
+          </p>
+        </div>
+      </section>
+
+      <section class="mb-6 mt-6">
+        <h2 class="text-xl font-semibold border-b pb-1 mb-2">
+          Experiencia Laboral
+        </h2>
+        <ul class="space-y-4 text-sm">
           <li>
-            <strong>{title}</strong> · <span class="italic">{company}</span>  
-            <p class="text-gray-500">{date}</p>
-            <p class="text-gray-700 mt-1">{description}</p>
+            <strong>Proyecto de Grado de Ingeniería de Sistemas</strong> · <span
+              class="italic"
+              >Instituto Distrital de Recreación y Deporte (IDRD)</span
+            >
+            <p class="text-gray-500">Mayo 2023</p>
+            <p class="text-gray-700 mt-1">
+              Desarrollé una plataforma web para el apoyo a la gestión y control
+              de inventario de parques administrados por el IDRD (Instituto
+              Distrital de Recreación y Deporte), mediante la implementación de
+              metodologías ágiles de desarrollo y herramientas de software
+              libre.
+            </p>
           </li>
-        ))}
-      </ul>
+        </ul>
+      </section>
+
+      <section class="mb-6">
+        <h2 class="text-xl font-semibold border-b pb-1 mb-2">
+          Proyectos Destacados
+        </h2>
+        <ul class="space-y-4 text-sm">
+          {
+            PROJECTS.slice(0, 3).map(({ title, description, github }) => (
+              <li>
+                <strong>{title}</strong>
+                <p class="text-gray-700">{description}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section class="mb-6">
+        <h2 class="text-xl font-semibold border-b pb-1 mb-2">
+          Habilidades Técnicas
+        </h2>
+        <ul class="flex flex-wrap gap-2 text-sm">
+          {
+            PROJECTS.flatMap((p) => p.tags.map((tag) => tag.name))
+              .filter((value, index, self) => self.indexOf(value) === index)
+              .map((skill) => (
+                <li class="bg-gray-200 text-gray-800 px-2 py-1 rounded">
+                  {skill}
+                </li>
+              ))
+          }
+        </ul>
+      </section>
+
+      <section class="mb-6 print-page-break">
+        <h2 class="text-xl font-semibold border-b pb-1 mb-2">
+          Certificaciones
+        </h2>
+        <ul class="text-sm space-y-2">
+          {
+            CERTIFICACIONES.map((cert) => (
+              <li>
+                <strong>{cert.titulo}</strong> – {cert.emisor},{" "}
+                {cert.expedicion}
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <footer class="text-center text-sm text-gray-500 mt-10 no-print">
+        <button onclick="window.print()" class="text-blue-600 hover:underline"
+          >🖨️ Imprimir / Descargar en PDF</button
+        >
+      </footer>
     </section>
-
-    <section class="mb-6">
-      <h2 class="text-xl font-semibold border-b pb-1 mb-2">Proyectos Destacados</h2>
-      <ul class="space-y-4 text-sm">
-        {PROJECTS.slice(0, 3).map(({ title, description, github }) => (
-          <li>
-            <strong>{title}</strong>
-            <p class="text-gray-700">{description}</p>
-            {github && (
-              <a href={github} class="text-blue-600 hover:underline text-xs" target="_blank">Repositorio</a>
-            )}
-          </li>
-        ))}
-      </ul>
-    </section>
-
-    <section class="mb-6">
-      <h2 class="text-xl font-semibold border-b pb-1 mb-2">Certificaciones</h2>
-      <ul class="text-sm space-y-2">
-        {CERTIFICACIONES.map(cert => (
-          <li>
-            <strong>{cert.titulo}</strong> – {cert.emisor}, {cert.expedicion}  
-            <a href={cert.link} target="_blank" class="text-blue-600 hover:underline text-xs ml-1">Ver</a>
-          </li>
-        ))}
-      </ul>
-    </section>
-
-    <section class="mb-6">
-      <h2 class="text-xl font-semibold border-b pb-1 mb-2">Habilidades Técnicas</h2>
-      <ul class="flex flex-wrap gap-2 text-sm">
-        {PROJECTS.flatMap(p => p.tags.map(tag => tag.name))
-          .filter((value, index, self) => self.indexOf(value) === index)
-          .map(skill => (
-            <li class="bg-gray-200 text-gray-800 px-2 py-1 rounded">{skill}</li>
-          ))}
-      </ul>
-    </section>
-
-    <footer class="text-center text-sm text-gray-500 mt-10 no-print">
-      <button onclick="window.print()" class="text-blue-600 hover:underline">🖨️ Imprimir / Descargar en PDF</button>
-    </footer>
-
   </body>
 </html>
