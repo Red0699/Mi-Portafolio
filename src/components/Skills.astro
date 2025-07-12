@@ -1,0 +1,17 @@
+---
+import { HABILIDADES } from "@/data/habilidades";
+---
+
+<section class="mt-10">
+  
+  <div class="flex flex-wrap gap-4">
+    {
+      HABILIDADES.map((habilidad) => (
+        <span class={`flex items-center gap-2 px-3 py-2 rounded-full text-sm font-medium ${habilidad.class}`}>
+          <habilidad.icon class="w-4 h-4" />
+          {habilidad.name}
+        </span>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,41 @@
+---
+import { CERTIFICACIONES } from "@/data/certificaciones";
+import LinkIcon from "@/components/icons/Link.astro";
+---
+
+<section id="certificaciones" class="py-5">
+  
+  <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      CERTIFICACIONES.map(cert => (
+        <li class="p-4 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-center gap-3 mb-2">
+            <img
+              src={cert.logo}
+              alt={cert.emisor}
+              class="w-8 h-8 object-contain rounded-md border dark:border-gray-600"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800 dark:text-white">
+                {cert.titulo}
+              </h3>
+              <p class="text-sm text-gray-500">{cert.emisor} · {cert.expedicion}</p>
+            </div>
+          </div>
+
+          {cert.link && (
+            <a
+              href={cert.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-2 inline-flex items-center text-sm text-blue-600 hover:underline"
+            >
+              <LinkIcon class="w-4 h-4 mr-1" />
+              Ver certificación
+            </a>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</section>
