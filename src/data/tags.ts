@@ -13,6 +13,8 @@ import Css from "@/components/icons/Css.astro";
 import Javascript from "@/components/icons/Javascript.astro";
 import Php from "@/components/icons/Php.astro";
 import Typescript from "@/components/icons/Typescript.astro";
+import SAP from "@/components/icons/SAP.astro";
+import Excel from "@/components/icons/Excel.astro";
 
 export const TAGS = {
   NEXT: {
@@ -89,5 +91,15 @@ export const TAGS = {
     name: "TypeScript",
     class: "bg-[#3178C6] text-white",
     icon: Typescript,
+  },
+  SAP: {
+    name: "SAP",
+    class: "bg-[#0FAAFF] text-white",
+    icon: SAP,
+  },
+  EXCEL: {
+    name: "Excel",
+    class: "bg-[#107C41] text-white",
+    icon: Excel,
   },
 };
