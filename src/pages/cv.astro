@@ -83,6 +83,17 @@ import { HABILIDADES } from "@/data/habilidades";
         </h2>
         <ul class="space-y-4 text-sm">
           <li>
+            <strong
+              >Desarrollo de Sistema de Gestión de Casos en Excel con VBA</strong
+            > · <span class="italic">LOI Soluciones</span>
+            <p class="text-gray-500">Julio 2025 - Actualidad</p>
+            <p class="text-gray-700 mt-1">
+              Diseño de una herramienta en Excel con macros VBA para filtrar,
+              organizar y estructurar información de casos para una firma de
+              abogados.
+            </p>
+          </li>
+          <li>
             <strong>Proyecto de Grado de Ingeniería de Sistemas</strong> · <span
               class="italic"
               >Instituto Distrital de Recreación y Deporte (IDRD)</span
@@ -96,69 +107,61 @@ import { HABILIDADES } from "@/data/habilidades";
               libre.
             </p>
           </li>
+          
         </ul>
       </section>
 
-      <section class="mb-6">
-        <h2 class="text-xl font-semibold border-b pb-1 mb-2">
-          Proyectos Destacados
-        </h2>
-        <ul class="space-y-4 text-sm">
-          {
-            PROJECTS.slice(0, 3).map(({ title, description, github }) => (
-              <li>
-                <strong>{title}</strong>
-                <p class="text-gray-700">{description}</p>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
-
-      <section class="mb-6">
-        <h2 class="text-xl font-semibold border-b pb-1 mb-2">
-          Habilidades Técnicas
-        </h2>
-        <ul class="flex flex-wrap gap-2 text-sm">
-          {
-            PROJECTS.flatMap((p) => p.tags.map((tag) => tag.name))
-              .filter((value, index, self) => self.indexOf(value) === index)
-              .map((skill) => (
-                <li class="bg-gray-200 text-gray-800 px-2 py-1 rounded">
-                  {skill}
-                </li>
-              ))
-          }
-          <li class="bg-gray-200 text-gray-800 px-2 py-1 rounded">
-                  SAP
-          </li>
-          <li class="bg-gray-200 text-gray-800 px-2 py-1 rounded">
-                  EXCEL
-          </li>
-        </ul>
-      </section>
-
-      <section class="mb-6 print-page-break">
-        <h2 class="text-xl font-semibold border-b pb-1 mb-2">
-          Certificaciones
-        </h2>
-        <ul class="text-sm space-y-2">
-          {
-            CERTIFICACIONES.map((cert) => (
-              <li>
-                <strong>{cert.titulo}</strong> – {cert.emisor},{" "}
-                {cert.expedicion}
-              </li>
-            ))
-          }
-        </ul>
-      </section>
-
-      <footer class="text-center text-sm text-gray-500 mt-10 no-print">
-        <button onclick="window.print()" class="text-blue-600 hover:underline"
-          >🖨️ Imprimir / Descargar en PDF</button
-        >
-      </footer>
-    </section>
   </body>
+
+  <section class="mb-6">
+    <h2 class="text-xl font-semibold border-b pb-1 mb-2">
+      Proyectos Destacados
+    </h2>
+    <ul class="space-y-4 text-sm">
+      {
+        PROJECTS.slice(0, 2).map(({ title, description, github }) => (
+          <li>
+            <strong>{title}</strong>
+            <p class="text-gray-700">{description}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="mb-6">
+    <h2 class="text-xl font-semibold border-b pb-1 mb-2">
+      Habilidades Técnicas
+    </h2>
+    <ul class="flex flex-wrap gap-2 text-sm">
+      {
+        PROJECTS.flatMap((p) => p.tags.map((tag) => tag.name))
+          .filter((value, index, self) => self.indexOf(value) === index)
+          .map((skill) => (
+            <li class="bg-gray-200 text-gray-800 px-2 py-1 rounded">{skill}</li>
+          ))
+      }
+      <li class="bg-gray-200 text-gray-800 px-2 py-1 rounded">SAP</li>
+      <li class="bg-gray-200 text-gray-800 px-2 py-1 rounded">EXCEL</li>
+    </ul>
+  </section>
+
+  <section class="mb-6 print-page-break">
+    <h2 class="text-xl font-semibold border-b pb-1 mb-2">Certificaciones</h2>
+    <ul class="text-sm space-y-2">
+      {
+        CERTIFICACIONES.map((cert) => (
+          <li>
+            <strong>{cert.titulo}</strong> – {cert.emisor}, {cert.expedicion}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <footer class="text-center text-sm text-gray-500 mt-10 no-print">
+    <button onclick="window.print()" class="text-blue-600 hover:underline"
+      >🖨️ Imprimir / Descargar en PDF</button
+    >
+  </footer>
 </html>
