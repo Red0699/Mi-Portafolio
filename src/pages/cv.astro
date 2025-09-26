@@ -10,24 +10,75 @@ import { HABILIDADES } from "@/data/habilidades";
     <title>CV de Nicolás Campos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-      @media print {
-        .no-print {
-          display: none;
-        }
-        html {
-          zoom: 0.95;
-        }
+      /* Estilos generales */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
       }
+
       @media print {
+        /* Márgenes de impresión */
+        @page {
+          size: A4;
+          margin: 1.8cm 2cm 1.8cm 2cm; /* superior, derecha, inferior, izquierda */
+        }
+
+        /* Ajuste de cuerpo */
+        body {
+          font-size: 11.5pt;
+          color: #000;
+          background: #fff !important;
+          max-width: 100%;
+          padding: 0;
+        }
+
+        /* Ocultar botones o elementos innecesarios */
+        .no-print {
+          display: none !important;
+        }
+
+        /* Control de saltos de página */
         .print-page-break {
           page-break-before: always;
+        }
+
+        /* Encabezado más compacto */
+        header {
+          margin-bottom: 10px;
+          padding-bottom: 6px;
+        }
+
+        header h1 {
+          font-size: 18pt;
+        }
+
+        header p {
+          font-size: 10.5pt;
+        }
+
+        /* Títulos de sección */
+        h2 {
+          font-size: 13pt;
+          margin-top: 14px;
+          margin-bottom: 6px;
+        }
+
+        h3, h4, strong {
+          font-size: 11.5pt;
+        }
+
+        /* Listas con mejor legibilidad */
+        ul {
+          margin: 4px 0 8px 18px;
+        }
+        li {
+          margin-bottom: 3px;
         }
       }
     </style>
   </head>
-  <body
-    class="bg-white text-gray-900 font-sans px-6 py-12 max-w-3xl mx-auto print:px-0 print:py-4"
-  >
+
+  <body class="bg-white text-gray-900 font-sans px-6 py-12 max-w-3xl mx-auto print:px-0 print:py-0">
     <header class="border-b pb-4 mb-5">
       <h1 class="text-3xl font-bold">Yimmer Nicolás Campos Rojas</h1>
       <p class="text-lg text-gray-600">
@@ -47,6 +98,7 @@ import { HABILIDADES } from "@/data/habilidades";
       </p>
     </header>
 
+    <!-- Perfil -->
     <section class="mb-6">
       <h2 class="text-xl font-semibold border-b pb-1 mb-2">Perfil</h2>
       <p class="text-sm leading-relaxed text-gray-700">
@@ -61,13 +113,12 @@ import { HABILIDADES } from "@/data/habilidades";
         grado de responsabilidad y compromiso en las labores a desarrollar.
       </p>
 
+      <!-- Educación -->
       <section class="mb-8 mt-6">
         <h2 class="text-xl font-semibold border-b pb-1 mb-2">Educación</h2>
         <div>
-          <h3 class="text-lg font-medium text-gray-800 dark:text-white">
-            Ingeniería de Sistemas
-          </h3>
-          <p class="text-sm text-gray-600 dark:text-gray-300">
+          <h3 class="text-lg font-medium text-gray-800">Ingeniería de Sistemas</h3>
+          <p class="text-sm text-gray-600">
             Universidad de Cundinamarca — Febrero 2018 - Marzo 2024
           </p>
           <p class="text-sm text-gray-500 mt-1">
@@ -77,91 +128,93 @@ import { HABILIDADES } from "@/data/habilidades";
         </div>
       </section>
 
+      <!-- Experiencia laboral -->
       <section class="mb-6 mt-6">
         <h2 class="text-xl font-semibold border-b pb-1 mb-2">
           Experiencia Laboral
         </h2>
-        <ul class="space-y-4 text-sm">
+        <ul class="space-y-6 text-sm">
+          <!-- Experiencia 1 -->
           <li>
-            <strong
-              >Desarrollo de Sistema de Gestión de Casos en Excel con VBA</strong
-            > · <span class="italic">LOI Soluciones</span>
+            <strong>Desarrollo de Sistema de Gestión de Casos en Excel con VBA</strong> · 
+            <span class="italic">LOI Soluciones</span>
             <p class="text-gray-500">Julio 2025 - Actualidad</p>
-            <p class="text-gray-700 mt-1">
-              Diseño de una herramienta en Excel con macros VBA para filtrar,
-              organizar y estructurar información de casos para una firma de
-              abogados.
-            </p>
+            <h4 class="text-sm font-semibold text-gray-800 mt-2">Funciones:</h4>
+            <ul class="list-disc pl-5 text-gray-700 mt-1 space-y-1">
+              <li>Diseñé e implementé una herramienta en Excel con macros VBA para filtrar, organizar y estructurar información de casos jurídicos.</li>
+              <li>Automatizé la conversión de datos en texto a formato de fecha para mejorar la precisión de los reportes.</li>
+              <li>Desarrollé módulos de búsqueda avanzada para inquilinos y propietarios.</li>
+              <li>Implementé validaciones automáticas para reducir errores en la manipulación de datos.</li>
+              <li>Optimizé el tiempo de gestión de datos reduciendo procesos manuales en más de un 60%.</li>
+            </ul>
           </li>
+
+          <!-- Experiencia 2 -->
           <li>
-            <strong>Proyecto de Grado de Ingeniería de Sistemas</strong> · <span
-              class="italic"
-              >Instituto Distrital de Recreación y Deporte (IDRD)</span
-            >
+            <strong>Proyecto de Grado de Ingeniería de Sistemas</strong> · 
+            <span class="italic">Instituto Distrital de Recreación y Deporte (IDRD)</span>
             <p class="text-gray-500">Mayo 2023</p>
-            <p class="text-gray-700 mt-1">
-              Desarrollé una plataforma web para el apoyo a la gestión y control
-              de inventario de parques administrados por el IDRD (Instituto
-              Distrital de Recreación y Deporte), mediante la implementación de
-              metodologías ágiles de desarrollo y herramientas de software
-              libre.
-            </p>
+            <h4 class="text-sm font-semibold text-gray-800 mt-2">Funciones:</h4>
+            <ul class="list-disc pl-5 text-gray-700 mt-1 space-y-1">
+              <li>Desarrollé una plataforma web para la gestión y control de inventario de parques del IDRD.</li>
+              <li>Implementé metodologías ágiles (Scrum) para la planificación y seguimiento del proyecto.</li>
+              <li>Diseñé la arquitectura del sistema con tecnologías modernas (Laravel, MySQL, JavaScript).</li>
+              <li>Mejoré la trazabilidad de recursos al digitalizar procesos manuales.</li>
+            </ul>
           </li>
-          
         </ul>
       </section>
+    </section>
 
-  </body>
-
-  <section class="mb-6">
-    <h2 class="text-xl font-semibold border-b pb-1 mb-2">
-      Proyectos Destacados
-    </h2>
-    <ul class="space-y-4 text-sm">
-      {
-        PROJECTS.slice(0, 2).map(({ title, description, github }) => (
-          <li>
-            <strong>{title}</strong>
-            <p class="text-gray-700">{description}</p>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
-
-  <section class="mb-6">
-    <h2 class="text-xl font-semibold border-b pb-1 mb-2">
-      Habilidades Técnicas
-    </h2>
-    <ul class="flex flex-wrap gap-2 text-sm">
-      {
-        PROJECTS.flatMap((p) => p.tags.map((tag) => tag.name))
-          .filter((value, index, self) => self.indexOf(value) === index)
-          .map((skill) => (
-            <li class="bg-gray-200 text-gray-800 px-2 py-1 rounded">{skill}</li>
+    <!-- Proyectos -->
+    <section class="mb-6">
+      <h2 class="text-xl font-semibold border-b pb-1 mb-2">Proyectos Destacados</h2>
+      <ul class="space-y-4 text-sm">
+        {
+          PROJECTS.slice(0, 2).map(({ title, description, github }) => (
+            <li>
+              <strong>{title}</strong>
+              <p class="text-gray-700">{description}</p>
+            </li>
           ))
-      }
-      <li class="bg-gray-200 text-gray-800 px-2 py-1 rounded">SAP</li>
-      <li class="bg-gray-200 text-gray-800 px-2 py-1 rounded">EXCEL</li>
-    </ul>
-  </section>
+        }
+      </ul>
+    </section>
 
-  <section class="mb-6 print-page-break">
-    <h2 class="text-xl font-semibold border-b pb-1 mb-2">Certificaciones</h2>
-    <ul class="text-sm space-y-2">
-      {
-        CERTIFICACIONES.map((cert) => (
-          <li>
-            <strong>{cert.titulo}</strong> – {cert.emisor}, {cert.expedicion}
-          </li>
-        ))
-      }
-    </ul>
-  </section>
+    <!-- Habilidades -->
+    <section class="mb-6">
+      <h2 class="text-xl font-semibold border-b pb-1 mb-2">Habilidades Técnicas</h2>
+      <ul class="flex flex-wrap gap-2 text-sm">
+        {
+          PROJECTS.flatMap((p) => p.tags.map((tag) => tag.name))
+            .filter((value, index, self) => self.indexOf(value) === index)
+            .map((skill) => (
+              <li class="bg-gray-200 text-gray-800 px-2 py-1 rounded">{skill}</li>
+            ))
+        }
+        <li class="bg-gray-200 text-gray-800 px-2 py-1 rounded">SAP</li>
+        <li class="bg-gray-200 text-gray-800 px-2 py-1 rounded">EXCEL</li>
+      </ul>
+    </section>
 
-  <footer class="text-center text-sm text-gray-500 mt-10 no-print">
-    <button onclick="window.print()" class="text-blue-600 hover:underline"
-      >🖨️ Imprimir / Descargar en PDF</button
-    >
-  </footer>
+    <!-- Certificaciones -->
+    <section class="mb-6 print-page-break">
+      <h2 class="text-xl font-semibold border-b pb-1 mb-2">Certificaciones</h2>
+      <ul class="text-sm space-y-2">
+        {
+          CERTIFICACIONES.map((cert) => (
+            <li>
+              <strong>{cert.titulo}</strong> – {cert.emisor}, {cert.expedicion}
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <footer class="text-center text-sm text-gray-500 mt-10 no-print">
+      <button onclick="window.print()" class="text-blue-600 hover:underline">
+        🖨️ Imprimir / Descargar en PDF
+      </button>
+    </footer>
+  </body>
 </html>
