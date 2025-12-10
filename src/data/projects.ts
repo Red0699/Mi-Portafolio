@@ -2,6 +2,15 @@ import { TAGS } from "./tags";
 
 export const PROJECTS = [
   {
+    title: "ECOZ - Calculadora de huella de carbono para las estaciones de Terpel",
+    description:
+      "Sistema web desarrollado para la cuantificación y monitoreo de emisiones de Compuestos Orgánicos Volátiles (COV) y Dióxido de Carbono (CO₂) generadas por la evaporación de gasolina en tanques de almacenamiento de estaciones de servicio (EDS), con el fin de proporcionar una herramienta confiable y automatizada para el control ambiental de estas fuentes de emisión.",
+    link: "",
+    github: "",
+    image: "/img/IMG_ECO.webp",
+    tags: [TAGS.LARAVEL, TAGS.PHP, TAGS.MYSQL, TAGS.JAVASCRIPT, TAGS.BOOTSTRAP],
+  },
+  {
     title: "Gestión y control de inventario de parques",
     description:
       "Plataforma web para el apoyo a la gestión y control de inventario de parques administrados por el IDRD.",
