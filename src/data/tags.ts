@@ -15,6 +15,7 @@ import Php from "@/components/icons/Php.astro";
 import Typescript from "@/components/icons/Typescript.astro";
 import SAP from "@/components/icons/SAP.astro";
 import Excel from "@/components/icons/Excel.astro";
+import Linux from "@/components/icons/Linux.astro";
 
 export const TAGS = {
   NEXT: {
@@ -101,5 +102,10 @@ export const TAGS = {
     name: "Excel",
     class: "bg-[#107C41] text-white",
     icon: Excel,
+  },
+  LINUX: {
+    name: "Linux",
+    class: "bg-[#FCC624] text-white",
+    icon: Linux,
   },
 };
