@@ -3,6 +3,7 @@ const personalImageAlt = "Nicolas Campos";
 import Badge from "@/components/Badge.astro";
 import LinkedInIcon from "@/components/icons/LinkedIn.astro";
 import MailIcon from "@/components/icons/Mail.astro";
+import DocumentIcon from "@/components/icons/Document.astro";
 import SocialPill from "@/components/SocialPill.astro";
 ---
 
@@ -43,7 +44,10 @@ import SocialPill from "@/components/SocialPill.astro";
         <LinkedInIcon class="size-4" />
         LinkedIn
       </SocialPill>
-      <SocialPill href="/cv"> 📄 Ver CV </SocialPill>
+      <SocialPill href="/cv">
+        <DocumentIcon class="size-4" />
+        Ver CV
+      </SocialPill>
     </nav>
   </div>
 </div>
