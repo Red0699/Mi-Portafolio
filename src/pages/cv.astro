@@ -20,7 +20,13 @@ import { HABILIDADES } from "@/data/habilidades";
         /* Márgenes de impresión */
         @page {
           size: A4;
-          margin: 1.8cm 2cm 1.8cm 2cm; /* superior, derecha, inferior, izquierda */
+          margin: 1.8cm 2cm 1.8cm 2cm; 
+        }
+
+        /* Ocultar encabezados y pies de página del navegador */
+        @page {
+          margin-top: 1.8cm;
+          margin-bottom: 1.8cm;
         }
 
         /* Ajuste de cuerpo */
@@ -30,6 +36,9 @@ import { HABILIDADES } from "@/data/habilidades";
           background: #fff !important;
           max-width: 100%;
           padding: 0;
+          margin: 0;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
         }
 
         /* Ocultar botones o elementos innecesarios */
@@ -82,8 +91,9 @@ import { HABILIDADES } from "@/data/habilidades";
     <header class="border-b pb-4 mb-5">
       <h1 class="text-3xl font-bold">Yimmer Nicolás Campos Rojas</h1>
       <p class="text-lg text-gray-600">
-        Ingeniero de Sistemas | Analista de datos y Desarrollador
+        Ingeniero de Sistemas | Desarrollador
       </p>
+      
       <p class="text-sm text-gray-500 mt-2">
         📍 Bogotá, Colombia · 📧 yimmernicolas@gmail.com · 📞 +57 3214663210 ·
         🌐
@@ -102,15 +112,7 @@ import { HABILIDADES } from "@/data/habilidades";
     <section class="mb-6">
       <h2 class="text-xl font-semibold border-b pb-1 mb-2">Perfil</h2>
       <p class="text-sm leading-relaxed text-gray-700">
-        Ingeniero de Sistemas con experiencia en desarrollo web
-        usando tecnologías como Laravel, Node.js, Angular, MySQL y más.
-        Apasionado por crear soluciones eficientes, con enfoque en usabilidad,
-        rendimiento y buenas prácticas.
-      </p>
-      <p class="text-sm leading-relaxed text-gray-700 mt-2">
-        Cuento con iniciativa de aprendizaje, proactividad, excelente
-        puntualidad, buenas relaciones interpersonales y trabajo en equipo, alto
-        grado de responsabilidad y compromiso en las labores a desarrollar.
+        Ingeniero de Sistemas enfocado en Desarrollo Web Full Stack y Análisis de Datos. Experiencia en el diseño y arquitectura de plataformas web utilizando Laravel, Node.js, Angular y bases de datos relacionales y no relacionales (MySQL, MongoDB).
       </p>
 
       <!-- Educación -->
@@ -139,27 +141,24 @@ import { HABILIDADES } from "@/data/habilidades";
             <strong>Desarrollo de Sistema de Gestión de Casos en Excel con VBA</strong> · 
             <span class="italic">LOI Soluciones</span>
             <p class="text-gray-500">Julio 2025 - Noviembre 2025</p>
-            <h4 class="text-sm font-semibold text-gray-800 mt-2">Funciones:</h4>
-            <ul class="list-disc pl-5 text-gray-700 mt-1 space-y-1">
-              <li>Diseñé e implementé una herramienta en Excel con macros VBA para filtrar, organizar y estructurar información de casos jurídicos.</li>
-              <li>Automatizé la conversión de datos en texto a formato de fecha para mejorar la precisión de los reportes.</li>
-              <li>Desarrollé módulos de búsqueda avanzada para inquilinos y propietarios.</li>
-              <li>Implementé validaciones automáticas para reducir errores en la manipulación de datos.</li>
-              <li>Optimizé el tiempo de gestión de datos reduciendo procesos manuales en más de un 60%.</li>
+            <ul class="list-disc pl-5 text-gray-700 mt-3 space-y-1">
+              <li><strong>Eficiencia operativa:</strong> Reducción de más del 60% en el tiempo de gestión de datos mediante la automatización de procesos manuales en entornos Excel.</li>
+              <li><strong>Desarrollo técnico:</strong> Creación desde cero de una herramienta basada en VBA y macros enfocada en estructurar, filtrar y procesar información de casos jurídicos.</li>
+              <li><strong>Mitigación de errores:</strong> Implementación de validaciones automáticas de datos y módulos de conversión de formatos (texto a fecha), elevando la precisión de los reportes gerenciales.</li>
+              <li><strong>Experiencia de usuario:</strong> Diseño de módulos de búsqueda avanzada para agilizar la localización y cruce de datos de inquilinos y propietarios.</li>
             </ul>
           </li>
 
           <!-- Experiencia 2 -->
           <li>
-            <strong>Proyecto de Grado de Ingeniería de Sistemas</strong> · 
+            <strong>Proyecto de Grado - Plataforma de Inventario Digital</strong> · 
             <span class="italic">Instituto Distrital de Recreación y Deporte (IDRD)</span>
-            <p class="text-gray-500">Mayo 2023</p>
-            <h4 class="text-sm font-semibold text-gray-800 mt-2">Funciones:</h4>
-            <ul class="list-disc pl-5 text-gray-700 mt-1 space-y-1">
-              <li>Desarrollé una plataforma web para la gestión y control de inventario de parques del IDRD.</li>
-              <li>Implementé metodologías ágiles (Scrum) para la planificación y seguimiento del proyecto.</li>
-              <li>Diseñé la arquitectura del sistema con tecnologías modernas (Laravel, MySQL, JavaScript).</li>
-              <li>Mejoré la trazabilidad de recursos al digitalizar procesos manuales.</li>
+            <p class="text-gray-500">Noviembre 2022 - Mayo 2023</p>
+            <ul class="list-disc pl-5 text-gray-700 mt-3 space-y-1">
+              <li><strong>Desarrollo Full Stack:</strong> Diseño y construcción desde cero de una plataforma web (Laravel, MySQL, JavaScript) para la digitalización del inventario de parques, eliminando el procesamiento manual y mejorando la trazabilidad de recursos.</li>
+              <li><strong>Metodología ágil:</strong> Implementación de Scrum (sprints y retrospectivas) para la planificación del proyecto, garantizando entregas puntuales y la documentación de más de 15 funcionalidades.</li>
+              <li><strong>Optimización y escala:</strong> Arquitectura escalable que permitió gestionar más de 100 registros de inventario con módulos de búsqueda avanzada y reportes en tiempo real.</li>
+              <li><strong>Calidad de datos:</strong> Reducción de errores en la manipulación de información en más de un 80% mediante la integración de validaciones automáticas en el sistema.</li>
             </ul>
           </li>
         </ul>
@@ -199,17 +198,15 @@ import { HABILIDADES } from "@/data/habilidades";
     </section>
 
     <!-- Certificaciones -->
-    <section class="mb-6 print-page-break">
-      <h2 class="text-xl font-semibold border-b pb-1 mb-2">Certificaciones</h2>
-      <ul class="text-sm space-y-2">
-        {
-          CERTIFICACIONES.map((cert) => (
-            <li>
-              <strong>{cert.titulo}</strong> – {cert.emisor}, {cert.expedicion}
-            </li>
-          ))
-        }
-      </ul>
+    <section class="mb-6">
+      <h2 class="text-xl font-semibold border-b pb-1 mb-2">Certificaciones & Formaciones</h2>
+      <div class="text-sm space-y-2">
+        <p><strong>Backend & APIs (Platzi):</strong> APIs .NET, Fundamentos .NET, Entity Framework, Node.js, Bases de Datos Relacionales</p>
+        <p><strong>Frontend & Web (Platzi):</strong> Angular 17, Frontend Developer, JavaScript</p>
+        <p><strong>Java & Spring Boot (Alura):</strong> Java & Spring Boot G4, Java Web, Oracle ONE, Integración BD</p>
+        <p><strong>Full Stack (Mastermind):</strong> Desarrollo Full Stack con Laravel & VueJS</p>
+        <p><strong>Herramientas & Certificaciones (Alura, SENA, Colsubsidio):</strong> Excel Avanzado, Emprendimiento, Agilidad, QA, BD Generalidades</p>
+      </div>
     </section>
 
     <footer class="text-center text-sm text-gray-500 mt-10 no-print">
