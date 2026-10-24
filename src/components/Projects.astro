@@ -5,62 +5,70 @@ import GitHub from "./icons/GitHub.astro";
 import Link from "./icons/Link.astro";
 ---
 
-<div class="flex flex-col gap-y-16">
+<div class="flex flex-col gap-y-8">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-      <article class="flex flex-col space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        {/* Imagen */}
-        <div class="w-full md:w-1/2">
-          <div class="relative overflow-hidden rounded-xl border dark:border-gray-700 shadow-xl transition-transform duration-500 ease-in-out md:group-hover:-translate-y-1 md:group-hover:shadow-2xl">
-            <img
-              alt={`Imagen del proyecto ${title}`}
-              src={image}
-              loading="lazy"
-              class="w-full h-[240px] sm:h-[280px] md:h-[320px] object-cover rounded-xl transition-transform duration-300 ease-in-out md:group-hover:scale-105"
-            />
+    PROJECTS.map(({ image, title, description, tags, link, github }, index) => (
+      <article
+        class={`group relative overflow-hidden rounded-[28px] border border-slate-200/80 bg-white/80 p-4 shadow-[0_25px_60px_-20px_rgba(15,23,42,0.25)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_65px_-20px_rgba(15,23,42,0.35)] dark:border-slate-700/80 dark:bg-slate-900/80 md:p-6 ${
+          index % 2 === 1 ? "md:[&_.project-media]:order-2 md:[&_.project-content]:order-1" : ""
+        }`}
+      >
+        <div class="grid gap-6 md:grid-cols-2 md:items-center">
+          <div class="project-media relative">
+            <div class="absolute -inset-3 -z-10 rounded-[28px] bg-gradient-to-br from-sky-400/20 via-indigo-400/10 to-fuchsia-400/20 blur-2xl" />
+            <div class="relative overflow-hidden rounded-2xl border border-slate-200/80 bg-slate-100 shadow-lg transition-transform duration-500 ease-out group-hover:scale-[1.01] dark:border-slate-700/80 dark:bg-slate-800">
+              <img
+                alt={`Imagen del proyecto ${title}`}
+                src={image}
+                loading="lazy"
+                class="h-[240px] w-full object-cover transition-transform duration-500 ease-out sm:h-[280px] md:h-[320px] group-hover:scale-105"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-slate-900/5 to-transparent" />
+            </div>
           </div>
-        </div>
 
-        {/* Información */}
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-            {title}
-          </h3>
+          <div class="project-content flex h-full flex-col justify-center">
+            <div class="mb-3 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.28em] text-sky-600 dark:text-sky-400">
+              <span class="h-px w-8 bg-current" />
+              Proyecto {index + 1}
+            </div>
 
-          {/* Tags */}
-          <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row flex-wrap gap-x-2 gap-y-2 mb-2">
+            <h3 class="text-2xl font-bold leading-tight text-slate-900 dark:text-white md:text-3xl">
+              {title}
+            </h3>
+
+            <ul class="mt-4 flex flex-wrap gap-2">
               {tags.map((tag) => (
                 <li>
                   <span
-                    class={`flex items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+                    class={`inline-flex items-center gap-2 rounded-full border border-transparent px-2.5 py-1 text-[11px] font-medium ${tag.class}`}
                   >
-                    <tag.icon class="size-4" />
+                    <tag.icon class="size-3.5" />
                     {tag.name}
                   </span>
                 </li>
               ))}
             </ul>
+
+            <p class="mt-4 text-base leading-relaxed text-slate-700 dark:text-slate-300">
+              {description}
+            </p>
+
+            <footer class="mt-6 flex flex-wrap items-center gap-3">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-5" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
           </div>
-
-          {/* Descripción */}
-          <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-
-          {/* Enlaces */}
-          <footer class="flex items-end justify-start mt-4 gap-x-4">
-            {github && (
-              <LinkButton href={github}>
-                <GitHub class="size-6" />
-                Code
-              </LinkButton>
-            )}
-            {link && (
-              <LinkButton href={link}>
-                <Link class="size-4" />
-                Preview
-              </LinkButton>
-            )}
-          </footer>
         </div>
       </article>
     ))
