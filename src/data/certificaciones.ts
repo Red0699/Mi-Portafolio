@@ -1,5 +1,19 @@
 export const CERTIFICACIONES = [
     {
+        titulo: "Experto en Análisis y Visualización de Datos + IA",
+        emisor: "Udemy",
+        expedicion: "Curso completado",
+        link: "",
+        logo: "/img/logoUdemy.webp"
+    },
+    {
+        titulo: "Ciencia de Datos y Analítica de Negocio con Python y ChatGPT",
+        emisor: "Udemy",
+        expedicion: "Curso completado",
+        link: "",
+        logo: "/img/logoUdemy.webp"
+    },
+    {
         titulo: "Curso de APIs con .NET",
         emisor: "Platzi",
         expedicion: "Mayo 2024",

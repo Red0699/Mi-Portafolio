@@ -10,11 +10,13 @@ import LinkIcon from "@/components/icons/Link.astro";
       CERTIFICACIONES.map(cert => (
         <li class="p-4 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-sm hover:shadow-md transition-shadow">
           <div class="flex items-center gap-3 mb-2">
-            <img
-              src={cert.logo}
-              alt={cert.emisor}
-              class="w-8 h-8 object-contain rounded-md border dark:border-gray-600"
-            />
+            {cert.logo && (
+              <img
+                src={cert.logo}
+                alt={cert.emisor}
+                class="w-8 h-8 object-contain rounded-md border dark:border-gray-600"
+              />
+            )}
             <div>
               <h3 class="text-lg font-semibold text-gray-800 dark:text-white">
                 {cert.titulo}

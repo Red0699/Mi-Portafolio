@@ -1,9 +1,11 @@
 ---
 import { HABILIDADES } from "@/data/habilidades";
+import { TAGS } from "@/data/tags";
+
+const HERRAMIENTAS_ANALISIS = [TAGS.PYTHON, TAGS.R, TAGS.EXCEL, TAGS.LOOKER, TAGS.POWERBI];
 ---
 
 <section class="mt-10">
-  
   <div class="flex flex-wrap gap-4">
     {
       HABILIDADES.map((habilidad) => (
@@ -13,5 +15,23 @@ import { HABILIDADES } from "@/data/habilidades";
         </span>
       ))
     }
+  </div>
+  <div class="mt-8">
+    <h3 class="mb-3 text-xl font-semibold text-black/80 dark:text-white">
+      Herramientas de análisis de datos
+    </h3>
+    <ul class="flex flex-wrap gap-3 text-sm">
+      {
+        HERRAMIENTAS_ANALISIS.map((herramienta) => (
+          <li class={`flex items-center gap-2 rounded-full border border-gray-300 px-3 py-2 dark:border-gray-700 ${herramienta.class}`}>
+            <herramienta.icon class="w-4 h-4" />
+            {herramienta.name}
+          </li>
+        ))
+      }
+    </ul>
+    <p class="mt-3 text-sm text-gray-700 dark:text-gray-300">
+      Formación en análisis y visualización de datos.
+    </p>
   </div>
 </section>

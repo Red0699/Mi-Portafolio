@@ -16,6 +16,10 @@ import Typescript from "@/components/icons/Typescript.astro";
 import SAP from "@/components/icons/SAP.astro";
 import Excel from "@/components/icons/Excel.astro";
 import Linux from "@/components/icons/Linux.astro";
+import Python from "@/components/icons/Python.astro";
+import RLanguage from "@/components/icons/R.astro";
+import LookerStudio from "@/components/icons/LookerStudio.astro";
+import PowerBI from "@/components/icons/PowerBI.astro";
 
 export const TAGS = {
   NEXT: {
@@ -107,5 +111,25 @@ export const TAGS = {
     name: "Linux",
     class: "bg-[#FCC624] text-white",
     icon: Linux,
+  },
+  PYTHON: {
+    name: "Python",
+    class: "bg-[#3776AB] text-white",
+    icon: Python,
+  },
+  R: {
+    name: "R",
+    class: "bg-[#276DC3] text-white",
+    icon: RLanguage,
+  },
+  LOOKER: {
+    name: "Looker Studio",
+    class: "bg-[#14B8A6] text-white",
+    icon: LookerStudio,
+  },
+  POWERBI: {
+    name: "Power BI",
+    class: "bg-[#F2C811] text-[#1F1F1F]",
+    icon: PowerBI,
   },
 };

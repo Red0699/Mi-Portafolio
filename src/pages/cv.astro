@@ -1,218 +1,343 @@
 ---
-import { PROJECTS } from "@/data/projects";
-import { CERTIFICACIONES } from "@/data/certificaciones";
-import { HABILIDADES } from "@/data/habilidades";
 ---
 
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>CV de Nicolás Campos</title>
+    <title>CV | Yimmer Nicolás Campos Rojas | Desarrollador Full Stack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="CV, Ingeniero de Sistemas, Desarrollador Full Stack, Laravel, Node.js, JavaScript, MySQL, MongoDB, PHP, API REST, SQL, Angular, Bogotá, Colombia"
+    />
+    <meta
+      name="description"
+      content="Currículum de Yimmer Nicolás Campos Rojas, Ingeniero de Sistemas y desarrollador Full Stack con experiencia en Laravel, Node.js, JavaScript, bases de datos y automatización de procesos."
+    />
     <style>
-      /* Estilos generales */
+      :root {
+        --text: #111827;
+        --muted: #4b5563;
+        --line: #d1d5db;
+        --bg: #ffffff;
+        --accent: #1f2937;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
-        font-family: Arial, sans-serif;
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Arial, Helvetica, sans-serif;
         line-height: 1.5;
       }
 
+      main {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 32px 42px 40px;
+      }
+
+      header {
+        border-bottom: 2px solid var(--line);
+        padding-bottom: 12px;
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 30px;
+        letter-spacing: 0.02em;
+      }
+
+      .subtitle {
+        margin-top: 6px;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--accent);
+      }
+
+      .contact {
+        margin-top: 10px;
+        font-size: 13px;
+        color: var(--muted);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .contact span,
+      .contact a {
+        white-space: nowrap;
+      }
+
+      .contact a {
+        color: #0f172a;
+        text-decoration: underline;
+      }
+
+      section {
+        margin-top: 20px;
+      }
+
+      h2 {
+        margin: 0 0 8px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid var(--line);
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      p,
+      li,
+      span {
+        font-size: 14px;
+      }
+
+      p {
+        margin: 0 0 8px;
+        color: var(--text);
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      li {
+        margin-bottom: 6px;
+      }
+
+      .two-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px 30px;
+      }
+
+      .role {
+        font-weight: 700;
+      }
+
+      .company {
+        font-style: italic;
+        color: var(--muted);
+      }
+
+      .period {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .skills-list li {
+        margin: 0;
+        padding: 5px 9px;
+        background: #f3f4f6;
+        border: 1px solid #e5e7eb;
+        border-radius: 4px;
+        font-size: 12px;
+      }
+
+      .no-print {
+        display: block;
+      }
+
+      .print-actions {
+        margin-top: 18px;
+        text-align: center;
+        font-size: 13px;
+      }
+
+      .print-actions button {
+        background: #111827;
+        color: #ffffff;
+        border: none;
+        padding: 8px 14px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 700;
+      }
+
       @media print {
-        /* Márgenes de impresión */
         @page {
           size: A4;
-          margin: 1.8cm 2cm 1.8cm 2cm; 
+          margin: 1.8cm 1.8cm 1.8cm 1.8cm;
         }
 
-        /* Ocultar encabezados y pies de página del navegador */
-        @page {
-          margin-top: 1.8cm;
-          margin-bottom: 1.8cm;
-        }
-
-        /* Ajuste de cuerpo */
         body {
-          font-size: 11.5pt;
+          font-size: 11pt;
           color: #000;
-          background: #fff !important;
+          background: #fff;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        main {
           max-width: 100%;
           padding: 0;
-          margin: 0;
-          -webkit-print-color-adjust: exact !important;
-          print-color-adjust: exact !important;
         }
 
-        /* Ocultar botones o elementos innecesarios */
         .no-print {
           display: none !important;
         }
 
-        /* Control de saltos de página */
-        .print-page-break {
-          page-break-before: always;
+        h1 {
+          font-size: 24px;
         }
 
-        /* Encabezado más compacto */
-        header {
-          margin-bottom: 10px;
-          padding-bottom: 6px;
-        }
-
-        header h1 {
-          font-size: 18pt;
-        }
-
-        header p {
-          font-size: 10.5pt;
-        }
-
-        /* Títulos de sección */
         h2 {
-          font-size: 13pt;
-          margin-top: 14px;
-          margin-bottom: 6px;
+          font-size: 14px;
         }
 
-        h3, h4, strong {
-          font-size: 11.5pt;
-        }
-
-        /* Listas con mejor legibilidad */
-        ul {
-          margin: 4px 0 8px 18px;
-        }
-        li {
-          margin-bottom: 3px;
+        p,
+        li,
+        span {
+          font-size: 10.8pt;
         }
       }
     </style>
   </head>
 
-  <body class="bg-white text-gray-900 font-sans px-6 py-12 max-w-3xl mx-auto print:px-0 print:py-0">
-    <header class="border-b pb-4 mb-5">
-      <h1 class="text-3xl font-bold">Yimmer Nicolás Campos Rojas</h1>
-      <p class="text-lg text-gray-600">
-        Ingeniero de Sistemas | Desarrollador
-      </p>
-      
-      <p class="text-sm text-gray-500 mt-2">
-        📍 Bogotá, Colombia · 📧 yimmernicolas@gmail.com · 📞 +57 3214663210 ·
-        🌐
-        <a
-          href="https://nicolascampos-web.vercel.app/"
-          class="text-blue-600 hover:underline"
-          target="_blank"
-          rel="noopener"
-        >
-          nicolascampos-web.vercel.app
-        </a>
-      </p>
-    </header>
+  <body>
+    <main>
+      <header>
+        <h1>Yimmer Nicolás Campos Rojas</h1>
+        <div class="subtitle">Ingeniero de Sistemas | Desarrollador Full Stack</div>
+        <div class="contact">
+          <span>Bogotá, Colombia</span>
+          <span>yimmernicolas@gmail.com</span>
+          <span>+57 3214663210</span>
+          <a href="https://nicolascampos-web.vercel.app/" target="_blank" rel="noopener">nicolascampos-web.vercel.app</a>
+        </div>
+      </header>
 
-    <!-- Perfil -->
-    <section class="mb-6">
-      <h2 class="text-xl font-semibold border-b pb-1 mb-2">Perfil</h2>
-      <p class="text-sm leading-relaxed text-gray-700">
-        Ingeniero de Sistemas enfocado en Desarrollo Web Full Stack y Análisis de Datos. Experiencia en el diseño y arquitectura de plataformas web utilizando Laravel, Node.js, Angular y bases de datos relacionales y no relacionales (MySQL, MongoDB).
-      </p>
+      <section>
+        <h2>Perfil profesional</h2>
+        <p>
+          Ingeniero de Sistemas con experiencia en desarrollo web, automatización de procesos,
+          análisis de datos y gestión de proyectos digitales. Especializado en el diseño,
+          construcción y mantenimiento de soluciones con Laravel, PHP, JavaScript, Node.js,
+          MySQL, MongoDB y herramientas de reporting. Me enfoco en crear aplicaciones escalables,
+          eficientes y fáciles de mantener, con orientación a resultados, calidad y mejora continua.
+        </p>
+      </section>
 
-      <!-- Educación -->
-      <section class="mb-8 mt-6">
-        <h2 class="text-xl font-semibold border-b pb-1 mb-2">Educación</h2>
-        <div>
-          <h3 class="text-lg font-medium text-gray-800">Ingeniería de Sistemas</h3>
-          <p class="text-sm text-gray-600">
-            Universidad de Cundinamarca — Febrero 2018 - Marzo 2024
-          </p>
-          <p class="text-sm text-gray-500 mt-1">
-            Formación orientada al desarrollo de software, análisis de datos y
-            metodologías ágiles.
-          </p>
+      <section>
+        <h2>Competencias clave</h2>
+        <div class="two-columns">
+          <ul>
+            <li>Desarrollo Full Stack con Laravel, PHP, JavaScript y Node.js</li>
+            <li>Diseño y consumo de APIs REST</li>
+            <li>Base de datos relacionales y no relacionales: MySQL, MongoDB</li>
+            <li>Diseño de interfaces web con HTML, CSS y Angular</li>
+            <li>Automatización de procesos y optimización de Excel con VBA</li>
+          </ul>
+          <ul>
+            <li>Control de versiones con Git y GitHub</li>
+            <li>Metodologías ágiles: Scrum, sprints y seguimiento de entregables</li>
+            <li>Validación y limpieza de datos</li>
+            <li>Resolución de problemas y análisis funcional</li>
+            <li>Documentación técnica y soporte a procesos operativos</li>
+          </ul>
         </div>
       </section>
 
-      <!-- Experiencia laboral -->
-      <section class="mb-6 mt-6">
-        <h2 class="text-xl font-semibold border-b pb-1 mb-2">
-          Experiencia Laboral
-        </h2>
-        <ul class="space-y-6 text-sm">
-          <!-- Experiencia 1 -->
-          <li>
-            <strong>Desarrollo de Sistema de Gestión de Casos en Excel con VBA</strong> · 
-            <span class="italic">LOI Soluciones</span>
-            <p class="text-gray-500">Julio 2025 - Noviembre 2025</p>
-            <ul class="list-disc pl-5 text-gray-700 mt-3 space-y-1">
-              <li><strong>Eficiencia operativa:</strong> Reducción de más del 60% en el tiempo de gestión de datos mediante la automatización de procesos manuales en entornos Excel.</li>
-              <li><strong>Desarrollo técnico:</strong> Creación desde cero de una herramienta basada en VBA y macros enfocada en estructurar, filtrar y procesar información de casos jurídicos.</li>
-              <li><strong>Mitigación de errores:</strong> Implementación de validaciones automáticas de datos y módulos de conversión de formatos (texto a fecha), elevando la precisión de los reportes gerenciales.</li>
-              <li><strong>Experiencia de usuario:</strong> Diseño de módulos de búsqueda avanzada para agilizar la localización y cruce de datos de inquilinos y propietarios.</li>
-            </ul>
-          </li>
+      <section>
+        <h2>Experiencia profesional</h2>
 
-          <!-- Experiencia 2 -->
-          <li>
-            <strong>Proyecto de Grado - Plataforma de Inventario Digital</strong> · 
-            <span class="italic">Instituto Distrital de Recreación y Deporte (IDRD)</span>
-            <p class="text-gray-500">Noviembre 2022 - Mayo 2023</p>
-            <ul class="list-disc pl-5 text-gray-700 mt-3 space-y-1">
-              <li><strong>Desarrollo Full Stack:</strong> Diseño y construcción desde cero de una plataforma web (Laravel, MySQL, JavaScript) para la digitalización del inventario de parques, eliminando el procesamiento manual y mejorando la trazabilidad de recursos.</li>
-              <li><strong>Metodología ágil:</strong> Implementación de Scrum (sprints y retrospectivas) para la planificación del proyecto, garantizando entregas puntuales y la documentación de más de 15 funcionalidades.</li>
-              <li><strong>Optimización y escala:</strong> Arquitectura escalable que permitió gestionar más de 100 registros de inventario con módulos de búsqueda avanzada y reportes en tiempo real.</li>
-              <li><strong>Calidad de datos:</strong> Reducción de errores en la manipulación de información en más de un 80% mediante la integración de validaciones automáticas en el sistema.</li>
-            </ul>
-          </li>
+        <article>
+          <p><span class="role">Desarrollo de sistema de gestión de casos en Excel con VBA</span> · <span class="company">LOI Soluciones</span></p>
+          <p class="period">Julio 2025 - Noviembre 2025</p>
+          <ul>
+            <li>Desarrollé una herramienta de gestión de casos jurídicos en Excel con macros y VBA para automatizar procesos manuales.</li>
+            <li>Reducí más del 60% el tiempo de gestión de información mediante validaciones, filtros avanzados y búsqueda estructurada.</li>
+            <li>Implementé conversiones automáticas de formatos y validaciones de datos para mejorar la consistencia de reportes gerenciales.</li>
+            <li>Creé módulos de consulta, organización y cruzamiento de datos para apoyar la revisión de información de inquilinos y propietarios.</li>
+          </ul>
+        </article>
+
+        <article style="margin-top: 18px;">
+          <p><span class="role">Proyecto de grado - Plataforma de inventario digital</span> · <span class="company">Instituto Distrital de Recreación y Deporte (IDRD)</span></p>
+          <p class="period">Noviembre 2022 - Mayo 2023</p>
+          <ul>
+            <li>Diseñé y construí una plataforma web para gestionar inventarios de parques y recursos institucionales.</li>
+            <li>Usé Laravel, MySQL, JavaScript y metodologías ágiles para entregar funcionalidades con seguimiento por sprints.</li>
+            <li>Implementé módulos de búsqueda, validación de datos y reportes para optimizar la trazabilidad y reducir errores operativos.</li>
+            <li>Mejoré la organización del inventario con más de 100 registros gestionados y más de 15 funcionalidades documentadas.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section>
+        <h2>Proyectos destacados</h2>
+        <ul>
+          <li><strong>Portafolio personal y proyectos web:</strong> desarrollo de sitios web con enfoque en diseño, usabilidad y presentación de resultados técnicos.</li>
+          <li><strong>Soluciones de gestión y automatización:</strong> creación de herramientas internas para reducir tiempo operativo y mejorar la calidad de la información.</li>
+          <li><strong>Aplicaciones con bases de datos y lógica de negocio:</strong> diseño de sistemas orientados a manejo de inventarios, reportes y trazabilidad.</li>
         </ul>
       </section>
-    </section>
 
-    <!-- Proyectos -->
-    <section class="mb-6">
-      <h2 class="text-xl font-semibold border-b pb-1 mb-2">Proyectos Destacados</h2>
-      <ul class="space-y-4 text-sm">
-        {
-          PROJECTS.slice(0, 3).map(({ title, description, github }) => (
-            <li>
-              <strong>{title}</strong>
-              <p class="text-gray-700">{description}</p>
-            </li>
-          ))
-        }
-      </ul>
-    </section>
+      <section>
+        <h2>Habilidades técnicas</h2>
+        <ul class="skills-list">
+          <li>Laravel</li>
+          <li>PHP</li>
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>Node.js</li>
+          <li>Angular</li>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>MySQL</li>
+          <li>MongoDB</li>
+          <li>SQL</li>
+          <li>API REST</li>
+          <li>Git</li>
+          <li>GitHub</li>
+          <li>VBA</li>
+          <li>Excel</li>
+          <li>Scrum</li>
+          <li>Power BI</li>
+          <li>Python</li>
+          <li>Linux</li>
+        </ul>
+      </section>
 
-    <!-- Habilidades -->
-    <section class="mb-6">
-      <h2 class="text-xl font-semibold border-b pb-1 mb-2">Habilidades Técnicas</h2>
-      <ul class="flex flex-wrap gap-2 text-sm">
-        {
-          PROJECTS.flatMap((p) => p.tags.map((tag) => tag.name))
-            .filter((value, index, self) => self.indexOf(value) === index)
-            .map((skill) => (
-              <li class="bg-gray-200 text-gray-800 px-2 py-1 rounded">{skill}</li>
-            ))
-        }
-        <li class="bg-gray-200 text-gray-800 px-2 py-1 rounded">Linux</li>
-        <li class="bg-gray-200 text-gray-800 px-2 py-1 rounded">SAP</li>
-        <li class="bg-gray-200 text-gray-800 px-2 py-1 rounded">Excel</li>
-      </ul>
-    </section>
+      <section>
+        <h2>Educación</h2>
+        <p><strong>Ingeniería de Sistemas</strong></p>
+        <p>Universidad de Cundinamarca | Febrero 2018 - Marzo 2024</p>
+      </section>
 
-    <!-- Certificaciones -->
-    <section class="mb-6">
-      <h2 class="text-xl font-semibold border-b pb-1 mb-2">Certificaciones & Formaciones</h2>
-      <div class="text-sm space-y-2">
-        <p><strong>Backend & APIs (Platzi):</strong> APIs .NET, Fundamentos .NET, Entity Framework, Node.js, Bases de Datos Relacionales</p>
-        <p><strong>Frontend & Web (Platzi):</strong> Angular 17, Frontend Developer, JavaScript</p>
-        <p><strong>Java & Spring Boot (Alura):</strong> Java & Spring Boot G4, Java Web, Oracle ONE, Integración BD</p>
-        <p><strong>Full Stack (Mastermind):</strong> Desarrollo Full Stack con Laravel & VueJS</p>
-        <p><strong>Herramientas & Certificaciones (Alura, SENA, Colsubsidio):</strong> Excel Avanzado, Emprendimiento, Agilidad, QA, BD Generalidades</p>
+      <section>
+        <h2>Certificaciones y formación</h2>
+        <ul>
+          <li>APIs .NET, Fundamentos .NET, Entity Framework, Node.js, Bases de Datos Relacionales — Platzi</li>
+          <li>Angular 17, Frontend Developer, JavaScript — Platzi</li>
+          <li>Java & Spring Boot G4, Java Web, Integración con Bases de Datos — Alura</li>
+          <li>Desarrollo Full Stack con Laravel y Vue.js — Mastermind</li>
+          <li>Excel Avanzado, Emprendimiento, Agilidad, QA y Bases de Datos — SENA / Alura / Colsubsidio</li>
+        </ul>
+      </section>
+
+      <div class="print-actions no-print">
+        <button onclick="window.print()">Imprimir / Descargar PDF</button>
       </div>
-    </section>
-
-    <footer class="text-center text-sm text-gray-500 mt-10 no-print">
-      <button onclick="window.print()" class="text-blue-600 hover:underline">
-        🖨️ Imprimir / Descargar en PDF
-      </button>
-    </footer>
+    </main>
   </body>
 </html>

@@ -41,6 +41,7 @@ const navItems = [
       navItems.map((link) => (
         <a
           class="relative block px-2 py-2 transition hover:text-red-500 dark:hover:text-red-400"
+          data-section={link.label}
           aria-label={link.label}
           href={link.url}
         >
@@ -54,39 +55,52 @@ const navItems = [
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    const sections = document.querySelectorAll("section");
-    const navItems = document.querySelectorAll("header nav a");
+    const navItems = document.querySelectorAll("header nav a[data-section]");
+    const sections = document.querySelectorAll<HTMLElement>("section[data-section]");
 
-    const callback = (entries: any[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navItems.forEach((item) => {
-            if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-red-500");
-            } else {
-              item.classList.remove("text-red-500");
-            }
-          });
-        }
+    const setActiveLink = (id: string | null) => {
+      navItems.forEach((item) => {
+        const isActive = item.getAttribute("data-section") === id;
+        item.classList.toggle("text-red-500", isActive);
+        item.classList.toggle("dark:text-red-400", isActive);
+        item.classList.toggle("font-semibold", isActive);
       });
     };
 
-    const observer = new IntersectionObserver(callback, {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.3,
-    });
+    const updateActiveLink = () => {
+      const activationLine = window.scrollY + window.innerHeight * 0.35;
+      let activeSection = sections[0] ?? null;
 
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
+      sections.forEach((section) => {
+        if (section.getBoundingClientRect().top + window.scrollY <= activationLine) {
+          activeSection = section;
+        }
+      });
 
-    // Cleanup function
-    document.onvisibilitychange = () => {
-      if (document.visibilityState === "hidden") {
-        observer.disconnect();
+      if (
+        window.scrollY + window.innerHeight >=
+        document.documentElement.scrollHeight - 2
+      ) {
+        activeSection = sections[sections.length - 1] ?? activeSection;
       }
+
+      setActiveLink(activeSection?.dataset.section ?? null);
     };
+
+    let frameRequested = false;
+    const handleScroll = () => {
+      if (frameRequested) return;
+
+      frameRequested = true;
+      window.requestAnimationFrame(() => {
+        updateActiveLink();
+        frameRequested = false;
+      });
+    };
+
+    updateActiveLink();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
   });
 </script>
 
