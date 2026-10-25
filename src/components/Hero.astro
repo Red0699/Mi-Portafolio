@@ -7,35 +7,27 @@ import DocumentIcon from "@/components/icons/Document.astro";
 import SocialPill from "@/components/SocialPill.astro";
 ---
 
-<div class="flex flex-col md:flex-row items-center max-w-2xl mx-auto">
-  <div class="md:flex-shrink-0 mb-4 md:mb-0 md:mr-8 flex flex-col items-center">
-    <img
-      class="rounded-full shadow-lg w-40 h-40 md:w-48 md:h-48"
-      src="/img/photo.webp"
-      alt={personalImageAlt}
-    />
-    <a
-      href="https://www.linkedin.com/in/nicolas-campos-72a1a11a4/"
-      target="_blank"
-      rel="noopener"
-      class="flex items-center transition md:justify-center md:hover:scale-105 mt-4"
-    >
-      <Badge>Disponible para trabajar</Badge>
-    </a>
-  </div>
-  <div>
-    <h1
-      class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
-    >
-      Hola, soy Nicolas Campos
-    </h1>
-    <p
-      class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
-    >
-      <strong>Ingeniero de Sistemas</strong> de Bogotá, Colombia 🇨🇴. Desarrollador
-      de software con formación en análisis de datos.
+<div class="relative mx-auto grid max-w-6xl items-center gap-12 py-8 md:grid-cols-[1.15fr_0.85fr] md:gap-16 md:py-12">
+  <div class="order-2 text-center md:order-1 md:text-left">
+    <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white/70 px-4 py-2 text-sm font-medium text-slate-700 shadow-sm dark:border-sky-900 dark:bg-slate-900/70 dark:text-slate-200">
+      <span class="size-2 rounded-full bg-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,0.12)]"></span>
+      Ingeniero de Sistemas <span class="text-slate-400">·</span> Bogotá, Colombia
     </p>
-    <nav class="flex flex-wrap gap-4 mt-8">
+
+    <h1 class="text-4xl font-extrabold leading-[1.05] tracking-tight text-slate-950 dark:text-white sm:text-6xl lg:text-7xl">
+      Hola, soy
+      <span class="mt-2 block bg-gradient-to-r from-sky-600 via-indigo-600 to-violet-600 bg-clip-text pb-2 text-transparent dark:from-sky-300 dark:via-indigo-300 dark:to-violet-300">
+        Nicolas Campos
+      </span>
+    </h1>
+
+    <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300 md:mx-0 md:text-xl">
+      Desarrollador de software con formación en
+      <strong class="font-semibold text-slate-900 dark:text-white">análisis de datos</strong>.
+      Creo soluciones digitales combinando tecnología, pensamiento analítico y atención al detalle.
+    </p>
+
+    <nav aria-label="Enlaces de contacto y currículum" class="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
       <SocialPill href="mailto:yimmernicolas@gmail.com">
         <MailIcon class="size-4" />
         Contáctame
@@ -46,12 +38,42 @@ import SocialPill from "@/components/SocialPill.astro";
       </SocialPill>
       <SocialPill href="/cv">
         <DocumentIcon class="size-4" />
-        Ver CV
+        CV Desarrollador
       </SocialPill>
       <SocialPill href="/cv-analista-datos">
         <DocumentIcon class="size-4" />
         CV Analista de Datos
       </SocialPill>
     </nav>
+  </div>
+
+  <div class="relative order-1 mx-auto w-full max-w-sm md:order-2">
+    <div class="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-sky-400/25 via-indigo-400/15 to-fuchsia-400/25 blur-2xl" />
+    <div class="relative rounded-[2rem] border border-white/70 bg-gradient-to-br from-white/90 to-sky-50/80 p-3 shadow-[0_30px_80px_-30px_rgba(30,64,175,0.4)] dark:border-slate-700/80 dark:from-slate-800/90 dark:to-slate-900/80">
+      <div class="relative overflow-hidden rounded-[1.5rem] bg-slate-200 dark:bg-slate-800">
+        <img
+          class="aspect-[4/5] w-full object-cover object-center"
+          src="/img/photo.webp"
+          alt={personalImageAlt}
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent"></div>
+        <a
+          href="https://www.linkedin.com/in/nicolas-campos-72a1a11a4/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="absolute bottom-4 left-4 transition-transform hover:scale-105"
+        >
+          <Badge>Disponible para trabajar</Badge>
+        </a>
+      </div>
+      <div class="flex items-center justify-between gap-3 px-2 pb-1 pt-4">
+        <div>
+          <p class="text-sm font-semibold text-slate-900 dark:text-white">Software & datos</p>
+          <p class="mt-0.5 text-xs text-slate-500 dark:text-slate-400">Bogotá, Colombia</p>
+        </div>
+        <span aria-hidden="true" class="flex size-10 items-center justify-center rounded-full bg-sky-100 text-lg dark:bg-sky-950">✦</span>
+      </div>
+    </div>
   </div>
 </div>
