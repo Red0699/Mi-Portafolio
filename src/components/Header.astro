@@ -40,7 +40,7 @@ const navItems = [
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-red-500 dark:hover:text-red-400"
+          class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
           data-section={link.label}
           aria-label={link.label}
           href={link.url}
@@ -61,8 +61,8 @@ const navItems = [
     const setActiveLink = (id: string | null) => {
       navItems.forEach((item) => {
         const isActive = item.getAttribute("data-section") === id;
-        item.classList.toggle("text-red-500", isActive);
-        item.classList.toggle("dark:text-red-400", isActive);
+        item.classList.toggle("text-yellow-500", isActive);
+        item.classList.toggle("dark:text-yellow-400", isActive);
         item.classList.toggle("font-semibold", isActive);
       });
     };
